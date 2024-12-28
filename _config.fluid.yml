@@ -274,11 +274,11 @@ post:
   comments:
     enable: true
     # type: disqus
-    # type: giscus
+    type: giscus
     # type: gitalk
     # type: valine
     # type: waline
-    type: twikoo
+    # type: twikoo
 
   # 评论插件
   # Comment plugin
