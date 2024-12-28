@@ -274,8 +274,8 @@ post:
   comments:
     enable: true
     # type: disqus
-    # type: giscus
-    type: gitalk
+    type: giscus
+    # type: gitalk
     # type: valine
     # type: waline
     # type: twikoo
