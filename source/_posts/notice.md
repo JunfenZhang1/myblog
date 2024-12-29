@@ -20,5 +20,6 @@ categories: notice
 
 
 ## c++的坑
+0.在windows上msvc的后端汇编质量最好，mingw只能是个玩具，个人以及跨平台可以用mingw，其他后端用msvc
 1.最近在折腾c++的opencv，发现windows上cmake，vcpkg默认都是msvc工具链，如果要用mingw，需要我们修改配置为mingw工具链
 2.官网以及scoop下载的windows的opencv，都是msvc版本，但是opencv的mingw版本与msvc版本有区别，mingw版本的需要我们手动编译才能使用
