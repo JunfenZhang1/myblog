@@ -20,6 +20,9 @@ categories: notice
 
 
 ## c++的坑
-0.在windows上msvc的后端汇编质量最好，mingw只能是个玩具，个人以及跨平台可以用mingw，其他后端用msvc
-1.最近在折腾c++的opencv，发现windows上cmake，vcpkg默认都是msvc工具链，如果要用mingw，需要我们修改配置为mingw工具链
-2.官网以及scoop下载的windows的opencv，都是msvc版本，但是opencv的mingw版本与msvc版本有区别，mingw版本的需要我们手动编译才能使用
+0. 在windows上msvc的后端汇编质量最好，mingw只能是个玩具，个人学习，个人项目以及跨平台可以用mingw，其他后端用msvc
+1. 最近在折腾c++的opencv，发现windows上cmake，vcpkg默认都是msvc工具链，如果要用mingw，需要我们修改配置为mingw工具链
+2. 官网以及scoop下载的windows的opencv，都是msvc版本，但是opencv的mingw版本与msvc版本有区别，mingw版本的需要我们手动编译才能使用
+3. 有时候动态库找不到入口，找不到动态库，编译器不对，可能是忘记添加到path以及path优先级不对（cmake生成的mingw配置文件中clang覆盖了gcc）（gcc环境重值到环境变量首位,莫名解决了dll找不到入口问题,也有可能是将动态库添加到了系统级path，提高了了动态库优先级）
+4. 如果要使用windows上的cl，第一个实在在vs中使用，第二在terminal的选项卡中用，第三是在cmd中用
+ "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat" -startdir=none -arch=x64 -host_arch=x64 激活（pwsh也有相应选项），第四将msvc的bin，lib，include添加到path，第5使用clang-cl替代cl兼容大部分cl编译情况。
