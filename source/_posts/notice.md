@@ -26,3 +26,4 @@ categories: notice
 3. 有时候动态库找不到入口，找不到动态库，编译器不对，可能是忘记添加到path以及path优先级不对（cmake生成的mingw配置文件中clang覆盖了gcc）（gcc环境重值到环境变量首位,莫名解决了dll找不到入口问题,也有可能是将动态库添加到了系统级path，提高了了动态库优先级）
 4. 如果要使用windows上的cl，第一个实在在vs中使用，第二在terminal的选项卡中用，第三是在cmd中用
  "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat" -startdir=none -arch=x64 -host_arch=x64 激活（pwsh也有相应选项），第四将msvc的bin，lib，include添加到path，第5使用clang-cl替代cl兼容大部分cl编译情况。
+ 5. 巨坑，vcpkg安装的其他项目可以正常识别，vcpkg安装成功了msvc的opencv，但无论如何都提示找不到，不管是set vcpkg目录还是直接opencv目录,vcpkg安装mingw-oencv失败。opencv msvc（cl，clang）无论如何都安装不上，opencv，mingw可以安装成功。windows msvc好像是与vcpkg冲突了，windows是c++二等公民，c++优先linux或wsl2，编程大多数推荐linux，wsl2.
